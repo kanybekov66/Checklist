@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Checklist View Controller-->
+        <!--Checklists-->
         <scene sceneID="YBi-9o-Lzb">
             <objects>
                 <tableViewController id="bOX-Ai-Ubl" customClass="ChecklistViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,9 +33,9 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="RpE-BC-rqC" firstAttribute="top" secondItem="gTR-18-eCe" secondAttribute="top" constant="11" id="EHI-GR-FuC"/>
+                                        <constraint firstItem="RpE-BC-rqC" firstAttribute="top" secondItem="gTR-18-eCe" secondAttribute="top" priority="750" constant="11" id="EHI-GR-FuC"/>
                                         <constraint firstAttribute="trailing" secondItem="RpE-BC-rqC" secondAttribute="trailing" constant="20" symbolic="YES" id="MF2-Is-pof"/>
-                                        <constraint firstAttribute="bottom" secondItem="RpE-BC-rqC" secondAttribute="bottom" constant="11.5" id="Z9g-cq-1LA"/>
+                                        <constraint firstAttribute="bottom" secondItem="RpE-BC-rqC" secondAttribute="bottom" priority="750" constant="11.5" id="Z9g-cq-1LA"/>
                                         <constraint firstItem="RpE-BC-rqC" firstAttribute="leading" secondItem="gTR-18-eCe" secondAttribute="leading" constant="20" symbolic="YES" id="dSE-ny-bPE"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -46,11 +46,57 @@
                             <outlet property="delegate" destination="bOX-Ai-Ubl" id="mxF-fd-5ja"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="sVW-XW-PNX"/>
+                    <navigationItem key="navigationItem" title="Checklists" id="sVW-XW-PNX">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="7S4-aj-75e">
+                            <connections>
+                                <segue destination="ogf-N7-KOt" kind="show" id="3PQ-Dl-mZv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fhM-Mg-VI0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1007.2" y="128.18590704647679"/>
+            <point key="canvasLocation" x="782" y="82"/>
+        </scene>
+        <!--Add Item Table Table View Controller-->
+        <scene sceneID="Ass-y7-eTV">
+            <objects>
+                <tableViewController id="ogf-N7-KOt" customClass="AddItemTableTableViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NfX-IH-jdz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="J6W-cw-Hry">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="J6W-cw-Hry" id="iGd-Gv-X0x">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ogf-N7-KOt" id="uju-UL-Lv4"/>
+                            <outlet property="delegate" destination="ogf-N7-KOt" id="bFB-8c-QKG"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="J8A-SL-oEC">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="ei5-Es-GPl">
+                            <connections>
+                                <action selector="cancel:" destination="ogf-N7-KOt" id="apQ-KM-Tv2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Add" id="psL-qc-wyJ">
+                            <connections>
+                                <action selector="done:" destination="ogf-N7-KOt" id="gVM-BY-F9N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QLL-Fy-f7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1724" y="112"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vd3-8S-W2R">
