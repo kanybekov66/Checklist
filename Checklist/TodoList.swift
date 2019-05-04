@@ -31,18 +31,27 @@ class TodoList {
         todos.append(row2Item)
         todos.append(row3Item)
         todos.append(row4Item)
+        
     }
     
-    func newToDo() -> ChecklistItem {
+    func newTodo() -> ChecklistItem {
         let item = ChecklistItem()
         item.text = randomTitle()
-        item.checked = true
+        item.checked  = true
         todos.append(item)
         return item
     }
     
+    func move(item: ChecklistItem, to index: Int) {
+        guard let currentIndex = todos.index(of: item) else {
+            return
+        }
+        todos.remove(at: currentIndex)
+        todos.insert(item, at: index)
+    }
+    
     private func randomTitle() -> String {
-        var titles = ["1", "2", "3", "4", "5"]
+        var titles = ["New todo item", "Generic todo", "Fill me out", "I need something to do", "Much todo about nothing"]
         let randomNumber = Int.random(in: 0 ... titles.count - 1)
         return titles[randomNumber]
     }

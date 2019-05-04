@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" id="gqJ-td-mbJ">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="ChecklistItem" id="gqJ-td-mbJ" customClass="ChecklistTableViewCell" customModule="Checklist" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gqJ-td-mbJ" id="gTR-18-eCe">
@@ -50,6 +50,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="checkmarkLabel" destination="6Q4-yd-nbC" id="VpM-WW-ivL"/>
+                                    <outlet property="todoTextLabel" destination="RpE-BC-rqC" id="dvE-eS-wDu"/>
                                     <segue destination="ogf-N7-KOt" kind="show" identifier="EditItemSegue" trigger="accessoryAction" id="kzB-LK-Yth"/>
                                 </connections>
                             </tableViewCell>
@@ -71,10 +73,10 @@
             </objects>
             <point key="canvasLocation" x="781.60000000000002" y="81.409295352323838"/>
         </scene>
-        <!--Add Item Table Table View Controller-->
+        <!--Item Detail View Controller-->
         <scene sceneID="Ass-y7-eTV">
             <objects>
-                <tableViewController id="ogf-N7-KOt" customClass="AddItemTableTableViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ogf-N7-KOt" customClass="ItemDetailViewController" customModule="Checklist" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="NfX-IH-jdz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
